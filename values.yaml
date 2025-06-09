@@ -1,11 +1,11 @@
 helmrepo:
-  gitrepourl: https://github.com/achu0107/helmrepo-fuseapp.git
+  gitrepourl: https://github.com/pbgb-esb-camel3/helmrepo-fuseapp.git
   gitbranchname: main
 application:
   game:
     appname: game
     pipelinename: pipeline-game
-    gitrepourl: https://github.com/achu0107/2048-game.git
+    gitrepourl: https://github.com/pbgb-esb-camel3/2048-game.git
     gitbranchname: main
     registryname: image-registry.openshift-image-registry.svc:5000
     projectname: fuse-uat-pipelines

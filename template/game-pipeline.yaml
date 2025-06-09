@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: {{ index .Values "application" "2048game" "pipelinename" }}
+  name: {{ .Values.application.game.pipelinename }}
   labels:
     app.kubernetes.io/instance: openshift-pipelines
 spec:
@@ -10,15 +10,15 @@ spec:
       description: 'True In Case if you want to create/update the ConfigMap'
       name: CM_FLAG
       type: string
-    - default: {{ .Values.application.2048game.appname }}
+    - default: {{ .Values.application.game.appname }}
       description: 'Fuse application name'
       name: APP_NAME
       type: string
-    - default: {{ .Values.application.2048game.gitrepourl }}
+    - default: {{ .Values.application.game.gitrepourl }}
       description: 'clone git url'
       name: GIT_REPO
       type: string
-    - default: {{ .Values.application.2048game.gitbranchname }}
+    - default: {{ .Values.application.game.gitbranchname }}
       description: 'branch name'
       name: GIT_REVISION
       type: string
@@ -30,35 +30,35 @@ spec:
       description: 'branch name'
       name: HELM_GIT_REVISION
       type: string
-    - default: {{ .Values.application.2048game.registryname }}
+    - default: {{ .Values.application.game.registryname }}
       description: 'registry name'
       name: IMAGE_NAME
       type: string
-    - default: {{ .Values.application.2048game.imagetag }}
+    - default: {{ .Values.application.game.imagetag }}
       description: 'tag of the image '
       name: IMAGE_TAG
       type: string
-    - default: {{ .Values.application.2048game.projectname}}
+    - default: {{ .Values.application.game.projectname}}
       description: 'project name where image will be created'
       name: NS_NAME
       type: string
-    - default: {{ .Values.application.2048game.useremail}}
+    - default: {{ .Values.application.game.useremail}}
       description: 'Used for Updating Image Version in Git'
       name: USER_EMAIL
       type: string
-    - default: {{ .Values.application.2048game.username}}
+    - default: {{ .Values.application.game.username}}
       description: 'Used for Updating Image Version in Git'
       name: USER_NAME
       type: string
-    - default: {{ .Values.application.2048game.env}}
+    - default: {{ .Values.application.game.env}}
       description: 'Environment where it is deployed'
       name: ENV
       type: string
-    - default: {{ .Values.application.2048game.appproplocation}}
+    - default: {{ .Values.application.game.appproplocation}}
       description: 'path of application-properties'
       name: APP_PROP_PATH
       type: string
-    - default: {{ .Values.application.2048game.cmprojectname}}
+    - default: {{ .Values.application.game.cmprojectname}}
       description: 'project where application properties will be deployed'
       name: CM_NS_NAME
       type: string

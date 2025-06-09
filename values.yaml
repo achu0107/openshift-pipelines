@@ -1,12 +1,12 @@
 helmrepo:
   gitrepourl: https://github.com/achu0107/helmrepo-fuseapp.git
-  gitbranchname: master
+  gitbranchname: main
 application:
   2048game:
     appname: 2048game
     pipelinename: pipeline-2048game
     gitrepourl: https://github.com/achu0107/2048-game.git
-    gitbranchname: master
+    gitbranchname: main
     registryname: image-registry.openshift-image-registry.svc:5000
     projectname: fuse-uat-pipelines
     useremail: achyuthkumarreddy707@gmail.com
